@@ -8,5 +8,10 @@ namespace WuwaTrackerBackend.Models
         {
 
         }
+
+        public DbSet<Character> Characters { get; set; }
+        public DbSet<Material> Materials { get; set; }
+        public DbSet<TacetCore> TacetCores { get; set; }
+        public DbSet<Flower> Flowers { get; set; }
     }
 }
