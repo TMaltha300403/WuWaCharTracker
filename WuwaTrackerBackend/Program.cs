@@ -37,11 +37,13 @@ app.Run();
 static void RegisterRepos(WebApplicationBuilder builder)
 {
     builder.Services.AddScoped<IFlowerRepository, FlowerRepository>();
+    builder.Services.AddScoped<ITacetCoreRepository, TacetCoreRepository>();
 }
 
 static void RegisterLogics(WebApplicationBuilder builder)
 {
     builder.Services.AddScoped<IFlowerContainer, FlowerContainer>();
+    builder.Services.AddScoped<ITacetCoreContainer, TacetCoreContainer>();
 }
 
 //TODO: Add all different things here when making it
