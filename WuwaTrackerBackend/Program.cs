@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
+using WuwaTrackerBackend.Containers;
 using WuwaTrackerBackend.Models;
+using WuwaTrackerBackend.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+RegisterRepos(builder);
+RegisterLogics(builder);
 
 var app = builder.Build();
 
@@ -28,3 +33,15 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+static void RegisterRepos(WebApplicationBuilder builder)
+{
+    builder.Services.AddScoped<IFlowerRepository, FlowerRepository>();
+}
+
+static void RegisterLogics(WebApplicationBuilder builder)
+{
+    builder.Services.AddScoped<IFlowerContainer, FlowerContainer>();
+}
+
+//TODO: Add all different things here when making it
