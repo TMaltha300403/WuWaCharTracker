@@ -10,10 +10,10 @@ namespace WuwaTrackerBackend.DTOs
         [MaxLength(50)]
         public string Name { get; set; }
         [Required]
-        public FlowerDTO FlowerType { get; set; }
+        public Guid FlowerID { get; set; }
         [Required]
-        public MaterialDTO MaterialType { get; set; }
+        public Guid MaterialID { get; set; }
         [Required]
-        public TacetCoreDTO TacetCoreType { get; set; }
+        public Guid TacetCoreID { get; set; }
     }
 }
