@@ -1,7 +1,7 @@
 <template>
   <div style="padding: 50px">
     <v-card title="Characters" variant="tonal">
-      <v-data-table :items-per-page="5" :items="items"></v-data-table>
+      <v-data-table :items-per-page="5" :items="characters"></v-data-table>
       <v-card-actions>
         <v-btn>Add</v-btn>
         <v-btn>Remove</v-btn>
@@ -13,113 +13,35 @@
 </template>
 
 <script lang="ts" setup>
-const items = [
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  },
-  {
-    name: 'African Elephant',
-    species: 'Loxodonta africana',
-    diet: 'Herbivore',
-    habitat: 'Savanna, Forests',
-  }]
+import axios from "axios";
+import {onMounted, ref} from "vue";
+let characters = ref<Character[]>([]);
+
+onMounted(() => {
+  getAllCharacters()
+})
+
+async function getAllCharacters(){
+  const options = {
+    method: 'GET',
+    url: 'https://localhost:7198/api/Character/GetAllCharacters',
+    param: ''
+  };
+  axios
+    .request(options)
+    .then(response => characters.value = response.data)
+    .catch(error => {
+      console.log(error)
+    })
+}
+
+interface Character {
+  id: string
+  name: string
+  flowerID: string
+  materialID: string
+  tacetCoreID: string
+
+}
+
 </script>
