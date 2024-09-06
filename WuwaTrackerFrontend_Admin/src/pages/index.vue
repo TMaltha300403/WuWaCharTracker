@@ -3,7 +3,9 @@
     <v-card title="Characters" variant="tonal">
       <v-data-table :items-per-page="5" :items="characters"></v-data-table>
       <v-card-actions>
-        <v-btn>Add</v-btn>
+        <v-btn
+        to="/characters/create"
+        >Add</v-btn>
         <v-btn>Remove</v-btn>
         <v-btn>Edit</v-btn>
       </v-card-actions>
