@@ -165,7 +165,7 @@ async function submit(event: SubmitEventPromise){
   const { valid } = await event
   if(valid){
     await createCharacter()
-    await router.push('')
+    await router.push('/')
   }
 
 }
