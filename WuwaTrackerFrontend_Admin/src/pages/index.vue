@@ -35,6 +35,7 @@
 <script lang="ts" setup>
 import axios from "axios";
 import {onMounted, ref} from "vue";
+import router from "@/router";
 let characters = ref<Character[]>([]);
 const search = ref('')
 const selectedChar = ref('')
@@ -70,6 +71,8 @@ async function deleteCharacter(){
       .catch(error => {
         console.log(error)
       })
+
+    await router.go();
   }
 }
 
