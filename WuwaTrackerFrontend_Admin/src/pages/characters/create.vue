@@ -1,5 +1,6 @@
 <template>
-  <VCard title="Create Character" variant="tonal">
+  <div style="padding: 50px">
+    <VCard title="Create Character" variant="tonal">
     <VForm
       validate-on="blur"
       @submit.prevent="submit"
@@ -54,6 +55,7 @@
       </VCardActions>
     </VForm>
   </VCard>
+  </div>
 </template>
 
 <script setup lang="ts">
