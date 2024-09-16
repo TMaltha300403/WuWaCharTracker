@@ -9,5 +9,6 @@ namespace WuwaTrackerBackend.Containers
         void CreateCharacter(CharacterDTO character);
         void UpdateCharacter(CharacterDTO character);
         void DeleteCharacter(Guid id);
+        IEnumerable<CharacterDTO> GetCharacter(Guid id);
     }
 }

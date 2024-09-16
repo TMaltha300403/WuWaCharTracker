@@ -21,6 +21,12 @@ namespace WuwaTrackerBackend.Containers
                 .Select(CharacterMapper.ToDto);
         }
 
+        public IEnumerable<CharacterDTO> GetCharacter(Guid id)
+        {
+            return _characterRepository.GetCharacter(id)
+                .Select(CharacterMapper.ToDto);
+        }
+
         public void CreateCharacter(CharacterDTO dto)
         {
             if (!Validator.TryValidateObject(dto, new ValidationContext(dto), null))

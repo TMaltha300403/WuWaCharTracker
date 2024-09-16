@@ -8,6 +8,7 @@ namespace WuwaTrackerBackend.Repositories
         void CreateCharacter(Character character);
         void UpdateCharacter(Character character);
         void DeleteCharacter(Guid id);
+        IEnumerable<Character> GetCharacter(Guid id);
     }
 }
 

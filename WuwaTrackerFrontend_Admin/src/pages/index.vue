@@ -59,7 +59,7 @@ async function getAllCharacters(){
 }
 
 async function deleteCharacter(){
-  if(selectedChar.value != null){
+  if(selectedChar.value.at(0) != null){
     const options ={
       method: 'DELETE',
       url: `https://localhost:7198/api/Character/DeleteCharacter/`,

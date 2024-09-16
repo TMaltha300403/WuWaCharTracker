@@ -21,6 +21,12 @@ namespace WuwaTrackerBackend.Controllers
             return Ok(_characterContainer.GetAll());
         }
 
+        [HttpGet(nameof(GetCharacter))]
+        public ActionResult<IEnumerable<CharacterDTO>> GetCharacter(Guid id)
+        {
+            return Ok(_characterContainer.GetCharacter(id));
+        }
+
         [HttpPost(nameof(CreateCharacter))]
         public ActionResult CreateCharacter(CharacterDTO dto)
         {

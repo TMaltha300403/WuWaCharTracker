@@ -29,6 +29,11 @@ namespace WuwaTrackerBackend.Repositories
                 .ToArray();
         }
 
+        public IEnumerable<Character> GetCharacter(Guid id)
+        {
+           return _context.Characters.Where(a => a.ID == id);
+        }
+
         public void UpdateCharacter(Character character)
         {
             _context.Characters.Update(character);
