@@ -40,5 +40,5 @@ jobs:
 
     steps:
     - name: Run tests
-      run: dotnet test ./WuwaTrackerBackend/WuwaTrackerBackend.sln --configuration ${{ env.BUILD_CONFIGURATION }} --no-build --verbosity normal
+      run: dotnet test ./WuwaTrackerBackend/WuwaTrackerBackend.sln --configuration ${{ env.BUILD_CONFIGURATION }} --verbosity normal
       
