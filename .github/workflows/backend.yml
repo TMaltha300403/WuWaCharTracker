@@ -1,0 +1,35 @@
+name: .NET backend
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      DOTNET_VERSION: '8.x.x'
+      BUILD_CONFIGURATION: 'Release'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up .NET Core SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: $ {{ env.DOTNET_VERSION }}
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build the project
+      run: dotnet build  --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
+
+    - name: Run tests
+      run: dotnet test --configuration ${{ env.BUILD_CONFIGURATION }} --no-build --verbosity normal
+      
