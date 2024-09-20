@@ -26,7 +26,7 @@ jobs:
         dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./WuwaTrackerBackend/WuwaTrackerBackend.sln
 
     - name: Build the project
       run: dotnet build ./WuwaTrackerBackend/WuwaTrackerBackend.sln  --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
