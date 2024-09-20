@@ -31,6 +31,14 @@ jobs:
     - name: Build the project
       run: dotnet build ./WuwaTrackerBackend/WuwaTrackerBackend.sln  --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
 
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      DOTNET_VERSION: '8.x.x'
+      BUILD_CONFIGURATION: 'Release'
+
+    steps:
     - name: Run tests
       run: dotnet test ./WuwaTrackerBackend/WuwaTrackerBackend.sln --configuration ${{ env.BUILD_CONFIGURATION }} --no-build --verbosity normal
       
