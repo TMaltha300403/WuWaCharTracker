@@ -7,8 +7,7 @@ on:
   pull_request:
     branches:
       - main
-  project:
-    - "WuwaTrackerBackend/WuwaTrackerBackend.snl"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,8 +29,8 @@ jobs:
       run: dotnet restore
 
     - name: Build the project
-      run: dotnet build  --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
+      run: dotnet build ./WuwaTrackerBackend/WuwaTrackerBackend.sln  --configuration ${{ env.BUILD_CONFIGURATION }} --no-restore
 
     - name: Run tests
-      run: dotnet test --configuration ${{ env.BUILD_CONFIGURATION }} --no-build --verbosity normal
+      run: dotnet test ./WuwaTrackerBackend/WuwaTrackerBackend.sln --configuration ${{ env.BUILD_CONFIGURATION }} --no-build --verbosity normal
       
