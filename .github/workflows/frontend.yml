@@ -19,12 +19,9 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
-        
-      - name: Change directory to WuwaTrackerFrontend_Admin
-        run: cd WuwaTrackerFrontend_Admin
       
       - name: Install dependencies
-        run: npm install
+        run: npm install ./WuwaTrackerFrontend_Admin/package.json
 
   test:
     runs-on: ubuntu-latest
