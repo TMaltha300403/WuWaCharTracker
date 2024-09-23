@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Run linter
-        run: npm run lint
+        run: npm run lint ./WuwaTrackerFrontend_Admin
         
       - name: Run tests
-        run: npm run test
+        run: npm run test ./WuwaTrackerFrontend_Admin
