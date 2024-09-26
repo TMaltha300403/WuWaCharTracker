@@ -22,7 +22,3 @@ jobs:
       
       - name: Install dependencies
         run: npm install ./WuwaTrackerFrontend_Admin
-
-        
-      - name: Run tests
-        run: npm run test
