@@ -52,5 +52,38 @@ namespace WuwaTrackerBackend.Containers
 
             _characterRepository.UpdateCharacter(CharacterMapper.ToModel(dto));
         }
+
+        public int[] UpgradeCount(int upgradeLevel)
+        {
+            int[] amountNeeded;
+            switch(upgradeLevel)
+            {
+                case 0:
+                    amountNeeded = [4, 12, 12, 4, 46, 60];
+                    break;
+                case 1:
+                    amountNeeded = [0, 12, 12, 4, 46, 60];
+                    break;
+                case 2:
+                    amountNeeded = [0, 8, 12, 4, 43, 56];
+                    break;
+                case 3:
+                    amountNeeded = [0, 0, 12, 4, 37, 48];
+                    break;
+                case 4:
+                    amountNeeded = [0, 0, 8, 4, 28, 36];
+                    break;
+                case 5:
+                    amountNeeded = [0, 0, 0, 4, 16, 20];
+                    break;
+                case 6:
+                    amountNeeded = [0, 0, 0, 0, 0, 0];
+                    break;
+                default:
+                    amountNeeded = [0, 0, 0, 0, 0, 0];
+                    break;
+            }
+            return amountNeeded;
+        }
     }
 }

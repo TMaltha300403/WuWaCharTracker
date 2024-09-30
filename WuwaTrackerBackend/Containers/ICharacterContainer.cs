@@ -10,5 +10,6 @@ namespace WuwaTrackerBackend.Containers
         void UpdateCharacter(CharacterDTO character);
         void DeleteCharacter(Guid id);
         IEnumerable<CharacterDTO> GetCharacter(Guid id);
+        int[] UpgradeCount(int upgradeLevel);
     }
 }

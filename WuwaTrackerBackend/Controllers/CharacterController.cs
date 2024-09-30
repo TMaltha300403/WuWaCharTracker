@@ -48,5 +48,11 @@ namespace WuwaTrackerBackend.Controllers
             _characterContainer.UpdateCharacter(dto);
             return Ok();
         }
+
+        [HttpGet(nameof(GetUpgradeAmount))]
+        public ActionResult GetUpgradeAmount(int upgradeLevel)
+        {
+            return Ok(_characterContainer.UpgradeCount(upgradeLevel));
+        }
     }
 }
