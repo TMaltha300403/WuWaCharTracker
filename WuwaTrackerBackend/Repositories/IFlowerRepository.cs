@@ -8,6 +8,7 @@ namespace WuwaTrackerBackend.Repositories
         void CreateFlower(Flower flower);
         void UpdateFlower(Flower flower);
         void DeleteFlower(Guid id);
+        IEnumerable<Flower> GetFlower(Guid id);
         
     }
 }

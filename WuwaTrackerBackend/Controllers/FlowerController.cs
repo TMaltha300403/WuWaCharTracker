@@ -42,5 +42,11 @@ namespace WuwaTrackerBackend.Controllers
             _flowerContainer.UpdateFlower(dto);
             return Ok();
         }
+
+        [HttpGet(nameof(GetFlower))]
+        public ActionResult<IEnumerable<FlowerDTO>> GetFlower(Guid id)
+        {
+            return Ok(_flowerContainer.GetFlower(id));
+        }
     }
 }

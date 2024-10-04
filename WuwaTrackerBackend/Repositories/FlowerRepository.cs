@@ -34,5 +34,10 @@ namespace WuwaTrackerBackend.Repositories
             _context.Flowers.Update(flower);
             _context.SaveChanges();
         }
+
+        public IEnumerable<Flower> GetFlower(Guid id)
+        {
+            return _context.Flowers.Where(a => a.ID == id);
+        }
     }
 }

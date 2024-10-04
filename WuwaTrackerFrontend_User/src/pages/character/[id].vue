@@ -1,6 +1,8 @@
 <template>
   <div style="padding: 50px">
-  {{selectedcharacter}}
+    <VCard variant="tonal">
+      {{selectedcharacter}}
+    </VCard>
   </div>
 
 </template>
