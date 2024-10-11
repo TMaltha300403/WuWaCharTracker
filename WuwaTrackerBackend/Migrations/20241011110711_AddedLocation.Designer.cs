@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WuwaTrackerBackend.Models;
 
@@ -11,9 +12,11 @@ using WuwaTrackerBackend.Models;
 namespace WuwaTrackerBackend.Migrations
 {
     [DbContext(typeof(WuwaContext))]
-    partial class WuwaContextModelSnapshot : ModelSnapshot
+    [Migration("20241011110711_AddedLocation")]
+    partial class AddedLocation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

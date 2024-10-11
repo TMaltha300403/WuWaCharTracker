@@ -1,9 +1,9 @@
 ﻿namespace WuwaTrackerBackend.Models
 {
-    public class Flower
+    public class Location
     {
         public Guid ID { get; set; }
         public string Name { get; set; }
-        public List<Location> Locations { get; set; }
+        public List<Flower> Flowers { get; set; }
     }
 }

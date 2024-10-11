@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using WuwaTrackerBackend.Models;
 
 namespace WuwaTrackerBackend.DTOs
 {
@@ -8,5 +9,6 @@ namespace WuwaTrackerBackend.DTOs
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
+        public List<Location> Locations { get; set; }
     }
 }
