@@ -10,5 +10,6 @@ namespace WuwaTrackerBackend.Containers
         void UpdateFlower(FlowerDTO dto);
         void DeleteFlower(Guid id);
         IEnumerable<FlowerDTO> GetFlower(Guid id);
+        IEnumerable<LocationDTO> GetFlowerLocations(Guid id);
     }
 }

@@ -13,5 +13,6 @@ namespace WuwaTrackerBackend.Models
         public DbSet<Material> Materials { get; set; }
         public DbSet<TacetCore> TacetCores { get; set; }
         public DbSet<Flower> Flowers { get; set; }
+        public DbSet<Location> Locations { get; set; }
     }
 }

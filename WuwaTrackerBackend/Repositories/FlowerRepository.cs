@@ -39,5 +39,15 @@ namespace WuwaTrackerBackend.Repositories
         {
             return _context.Flowers.Where(a => a.ID == id);
         }
+
+        public IEnumerable<Location> GetFlowerLocations(Guid id)
+        {
+            return _context.Flowers
+                .Where(f => f.ID == id)
+                .SelectMany(f => f.Locations)
+                .ToArray();
+
+        }
     }
 }
+

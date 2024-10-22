@@ -54,5 +54,11 @@ namespace WuwaTrackerBackend.Containers
             return _flowerRepository.GetFlower(id)
                 .Select(FlowerMapper.ToDto);
         }
+
+        public IEnumerable<LocationDTO> GetFlowerLocations(Guid id)
+        {
+            return _flowerRepository.GetFlowerLocations(id)
+                .Select(LocationMapper.ToDto);
+        }
     }
 }

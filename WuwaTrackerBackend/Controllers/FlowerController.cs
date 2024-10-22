@@ -48,5 +48,11 @@ namespace WuwaTrackerBackend.Controllers
         {
             return Ok(_flowerContainer.GetFlower(id));
         }
+
+        [HttpGet(nameof(GetFlowerLocations))]
+        public ActionResult<IEnumerable<LocationDTO>> GetFlowerLocations(Guid id)
+        {
+            return Ok(_flowerContainer.GetFlowerLocations(id));
+        }
     }
 }
